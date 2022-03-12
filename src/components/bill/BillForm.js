@@ -9,7 +9,7 @@ export const BillForm = () => {
     getBillById,editBillById,bill,bills } = useContext(BillContext);
   const history = useHistory()
   const { billId } = useParams()
-  const [currentPost, setCurrentPost] = useState({
+  const [currentBill, setCurrentPost] = useState({
     categoryId: "",
     title: "",
     dueDate: "",
