@@ -3,11 +3,19 @@ import { Route } from "react-router-dom"
 import { CategoryProvider } from "./category/CategoryProvider";
 import { CategoryList } from "./category/CategoryList"
 import { CategoryCreate } from "./category/CategoryCreate"
-// import { CategoryForm } from "./category/CategoryForm"
-// import { BillDetail } from './bill/BillDetail'
+import { CategoryForm } from "./category/CategoryForm"
+import { BillDetail } from './bill/BillDetail'
+import { MyBills } from './bill/MyBills'
 import { BillForm } from "./bill/BillForm"
 import { BillList } from "./bill/BillList"
 import { BillProvider } from "./bill/BillProvider"
+import { NoteForm } from "./note/NoteForm"
+import { NoteList } from "./note/NoteList"
+import { NoteProvider } from "./note/NoteProvider"
+import { TagList } from "./tag/TagList"
+import { TagForm } from "./tag/TagForm"
+import { TagProvider } from "./tag/TagProvider"
+import { TagDetail } from "./tag/TagDetail"
 
 export const ApplicationViews = () => {
     return (
@@ -20,6 +28,8 @@ export const ApplicationViews = () => {
         >
           <BillProvider>
             <CategoryProvider>
+                  <NoteProvider>
+                    <TagProvider>
               <Route exact path="/categories">
                 <CategoryList />
               </Route>
@@ -29,17 +39,17 @@ export const ApplicationViews = () => {
                   <CategoryCreate />
               </Route>
   
-              {/* <Route path='/categories/edit/:categoryId(\d+)'>
+              <Route path='/categories/edit/:categoryId(\d+)'>
                   <CategoryForm />
               </Route>
   
-              {/* <Route path='/categories/create'>
+              <Route path='/categories/create'>
                 <CategoryCreate />
-              </Route> */}
+              </Route> 
   
-              {/* <Route path='/categories/edit/:categoryId(\d+)'>
+              <Route path='/categories/edit/:categoryId(\d+)'>
                 <CategoryForm />
-              </Route> */}
+              </Route>
   
   
               <Route exact path='/bills/create'>
@@ -50,9 +60,9 @@ export const ApplicationViews = () => {
                 <BillForm />
               </Route>
   
-              {/* <Route path='/bills/view/:billId(\d+)'>
+              <Route path='/bills/view/:billId(\d+)'>
                 <BillDetail />
-              </Route> */}
+              </Route>
   
   
               <Route exact path="/">
@@ -62,11 +72,19 @@ export const ApplicationViews = () => {
               <Route exact path="/bills">
                 <BillList />
               </Route>
+              
   
-  
-              {/* <Route path='/myposts'>
-                  <MyPosts />
+              <Route path='/mybills'>
+                  <MyBills />
               </Route>
+
+              <Route exact path="/notes">
+                <NoteList />
+              </Route>
+
+              <Route path='/notes/edit/:noteId(\d+)'>
+                  <NoteForm />
+              </Route> 
               
               <Route exact path='/tags'>
                   <TagList />
@@ -76,7 +94,9 @@ export const ApplicationViews = () => {
               </Route>
               <Route path='/tags/edit/:tagId(\d+)'>
                   <TagForm />
-              </Route>  */}
+              </Route> 
+                    </TagProvider>
+                </NoteProvider>
             </CategoryProvider>
           </BillProvider>
         </main>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { useParams, useHistory } from "react-router"
-import { getCategories, editCategories } from "./CategoryProvider"
+import { CategoryContext } from "./CategoryProvider"
 
 export const CategoryForm = () => {
     const history = useHistory()
-    
+    const { getCategories, editCategories } = useContext(CategoryContext)
     const [categories, setCategories] = useState([])
     const [theCategory, setTheCategory] = useState({label: ''})
     const [newCategory, setNewCategory] = useState({})
@@ -12,7 +12,8 @@ export const CategoryForm = () => {
     const { categoryId } = useParams()
 
     useEffect(() => {
-        getCategories().then((data) => setCategories(data))
+        getCategories()
+        // .then((data) => setCategories(data))
     }, [])
 
     useEffect(() => {

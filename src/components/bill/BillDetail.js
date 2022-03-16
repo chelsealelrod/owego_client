@@ -2,12 +2,13 @@ import React from "react"
 import { useEffect, useContext } from "react"
 import { useParams, useHistory } from "react-router"
 import { BillContext } from "./BillProvider"
+import { NoteList } from "./note/NoteList"
 
 
 
-export const PostDetail = () => {
+export const BillDetail = () => {
 
-    const { bill, geBillById } = useContext(BillContext);
+    const { bill, getBillById } = useContext(BillContext);
     const {billId} = useParams()
     const history = useHistory()
 
@@ -22,6 +23,9 @@ export const PostDetail = () => {
             <p className='bill_detail_due_date'>Due on: {bill.due_date}</p>
             <p className='post_detail_amount_due'>Amount Due: {bill.amount_due}</p>
             <p className='post_detail_paid'>Paid: {bill.paid}</p>
+            <div className='post_detail_notes'>
+                <NoteList billId = {parseInt(billId)}/>
+            </div>
             <button onClick={() => {
                 history.push(`/bills/edit/${bill.id}`)}}>Edit</button>
         </div>

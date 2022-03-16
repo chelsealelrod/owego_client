@@ -3,10 +3,10 @@ import { useParams, useHistory } from "react-router";
 import { BillContext } from "./BillProvider"
 
 export const BillForm = () => {
-  
 
-  const { getCategories,categories,createBill,
-    getBillById,editBillById,bill,bills } = useContext(BillContext);
+
+  const { getCategories, categories, createBill,
+    getBillById, editBillById, bill, bills } = useContext(BillContext);
   const history = useHistory()
   const { billId } = useParams()
   const [currentBill, setCurrentBill] = useState({
@@ -18,13 +18,15 @@ export const BillForm = () => {
   });
 
   useEffect(() => {
-    getBillById(billId)
+    if (billId) {
+      getBillById(billId)
+    }
     getCategories()
-    }, [])
+  }, [])
 
-    useEffect(() => {
+  useEffect(() => {
     if (bill.id) {
-      const clearBill = {... bill}
+      const clearBill = { ...bill }
       clearBill.title = bill.title
       clearBill.categoryId = bill.category.id
       clearBill.dueDate = bill.due_date
@@ -34,8 +36,6 @@ export const BillForm = () => {
     }
   }, [bill])
 
-
-// ,[])
 
 
 
@@ -59,16 +59,16 @@ export const BillForm = () => {
 
   const changeAmountDueState = (event) => {
     const newBillState = { ...currentBill };
-    newBillState.amoundDue = event.target.value;
+    newBillState.amountDue = event.target.value;
     setCurrentBill(newBillState);
   };
 
   const changePaidState = (event) => {
     const newBillState = { ...currentBill };
     newBillState.content = event.target.value;
-    setCurrenBill(newBillState);
+    setCurrentBill(newBillState);
   };
-  
+
 
   return (
     <form className="billForm">
@@ -94,10 +94,10 @@ export const BillForm = () => {
             value={currentBill.categoryId}
             onChange={changeCategoryState}
           >
-          <option value="0">Select a category...</option>
-              {categories.map((category) => (
-                  <option value={category.id}>{category.label}</option>
-              ))}
+            <option value="0">Select a category...</option>
+            {categories.map((category) => (
+              <option value={category.id}>{category.label}</option>
+            ))}
           </select>
           <label htmlFor="due_date">Due Date: </label>
           <input
@@ -119,9 +119,9 @@ export const BillForm = () => {
             value={currentBill.amountDue}
             onChange={changeAmountDueState}
           />
-           <label htmlFor="paid">Paid: </label>
+          <label htmlFor="paid">Paid: </label>
           <input
-            type="text"
+            type="checkbox"
             name="paid"
             required
             autoFocus
@@ -129,7 +129,7 @@ export const BillForm = () => {
             value={currentBill.paid}
             onChange={changePaidState}
           />
-          
+
         </div>
       </fieldset>
 

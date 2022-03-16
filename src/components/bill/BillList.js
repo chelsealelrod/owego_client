@@ -4,7 +4,7 @@ import { BillContext } from "./BillProvider";
 
 export const BillList = () => {
   const history = useHistory()
-  const {bills, getBills,deleteBillById,editBillById} = useContext(BillContext);
+  const {bills,bill, getBills, deleteBillById} = useContext(BillContext);
 
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const BillList = () => {
                 <Link to={`/bills/${bill?.id}`}>{bill?.title}</Link><br/>
                 <p>{bill?.due_date}</p>
                 <button onClick={() => history.push(`/bills/view/${bill?.id}`)}>View Bill</button>
-                <button onClick={() => deletePostById(post.id)}>Delete Bill</button>
+                <button onClick={() => deleteBillById(post.id)}>Delete Bill</button>
                 <button onClick={() => {
                                     history.push(`/bills/edit/${bill.id}`)
                                 }}>Edit Bill</button>

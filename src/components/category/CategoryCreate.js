@@ -29,7 +29,7 @@ export const CategoryCreate = () => {
             addCategory({
                 label: category.label
             })
-            .then(() => history.push("/categories"))
+            .then(() => history.push("/categories/create"))
         }
     }
 
@@ -39,7 +39,10 @@ export const CategoryCreate = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="label">Category: </label>
-                    <input type="text" id="label" ref={label} required autoFocus className="form-control" placeholder="Category" onChange={handleControlledInputChange} defaultValue={category?.label} />
+                    <input type="text" id="label" ref={label} 
+                    required autoFocus className="form-control" 
+                    placeholder="Category" onChange={handleControlledInputChange} 
+                    defaultValue={category?.label} />
                 </div>
             </fieldset>
             <button type="submit"
