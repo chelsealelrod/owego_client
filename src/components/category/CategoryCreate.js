@@ -29,7 +29,7 @@ export const CategoryCreate = () => {
             addCategory({
                 label: category.label
             })
-            .then(() => history.push("/categories/create"))
+            .then(() => history.push("/categories"))
         }
     }
 

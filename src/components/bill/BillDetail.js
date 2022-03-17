@@ -2,7 +2,7 @@ import React from "react"
 import { useEffect, useContext } from "react"
 import { useParams, useHistory } from "react-router"
 import { BillContext } from "./BillProvider"
-import { NoteList } from "./note/NoteList"
+import { NoteList } from "../note/NoteList"
 
 
 
@@ -26,6 +26,7 @@ export const BillDetail = () => {
             <div className='post_detail_notes'>
                 <NoteList billId = {parseInt(billId)}/>
             </div>
+            
             <button onClick={() => {
                 history.push(`/bills/edit/${bill.id}`)}}>Edit</button>
         </div>

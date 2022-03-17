@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react"
+import React, { useEffect, useContext, useState } from "react"
 import { useHistory } from 'react-router-dom'
 import { CategoryContext  } from "./CategoryProvider"
 // import "./Categories.css"
@@ -6,7 +6,8 @@ import { CategoryContext  } from "./CategoryProvider"
 
 export const CategoryList = () => { 
     
-    const {getCategories, deleteCategory, categories, setCategories} = useContext(CategoryContext)
+    const {getCategories, deleteCategory, categories } = useContext(CategoryContext)
+    const [setCategories] = useState([])
     const handleDelete = (id) => {
         deleteCategory(id)
         .then(() => {

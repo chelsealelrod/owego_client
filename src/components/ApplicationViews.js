@@ -34,10 +34,7 @@ export const ApplicationViews = () => {
                 <CategoryList />
               </Route>
   
-  
-              <Route path='/categories/create'>
-                  <CategoryCreate />
-              </Route>
+
   
               <Route path='/categories/edit/:categoryId(\d+)'>
                   <CategoryForm />
