@@ -24,6 +24,12 @@ export const BillForm = () => {
     getCategories()
   }, [])
 
+
+  useEffect(() => 
+  console.log(currentBill)
+  , [currentBill])
+
+
   useEffect(() => {
     if (bill.id) {
       const clearBill = { ...bill }
@@ -65,7 +71,7 @@ export const BillForm = () => {
 
   const changePaidState = (event) => {
     const newBillState = { ...currentBill };
-    newBillState.content = event.target.value;
+    newBillState.paid = event.target.checked;
     setCurrentBill(newBillState);
   };
 
