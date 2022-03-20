@@ -32,7 +32,7 @@ export const BillDetail = () => {
             <p className='bill_detail_paid'>Paid: {bill?.paid === true?'Paid':'Not Paid'}</p>
             <div className='bill_detail_notes'>
                 <NoteForm billId={billId}/>
-                <NoteList billId={parseInt(billId)}/>
+                <NoteList billNotes={bill.notes}/>
             </div>
             
             <button onClick={() => {

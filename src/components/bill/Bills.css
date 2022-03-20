@@ -1,6 +1,7 @@
-.bill_list {
+.bill_card {
     border: solid seagreen;
     padding: 1em;
+    margin: 1em, 1em, 1em, 155em;
 }
 
 .bill_detail {

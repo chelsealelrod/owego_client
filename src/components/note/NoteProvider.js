@@ -24,12 +24,17 @@ export const NoteProvider = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(note),
-    }).then((res) => res.json());
+    }).then((res) => res.json())
+    .then(getNoteByBillId);
   };
 
   const deleteNote = (id) => {
     return fetch(`http://localhost:8000/notes/${id}`, {
       method: "DELETE",
+      headers: {
+        Authorization: `Token ${localStorage.getItem("owegouser_id")}`,
+        "Content-Type": "application/json",
+      },
     }).then(getNotes);
   };
 

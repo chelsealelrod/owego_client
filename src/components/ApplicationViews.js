@@ -5,7 +5,6 @@ import { CategoryList } from "./category/CategoryList"
 import { CategoryCreate } from "./category/CategoryCreate"
 import { CategoryForm } from "./category/CategoryForm"
 import { BillDetail } from './bill/BillDetail'
-import { MyBills } from './bill/MyBills'
 import { BillForm } from "./bill/BillForm"
 import { BillList } from "./bill/BillList"
 import { BillProvider } from "./bill/BillProvider"
@@ -16,6 +15,7 @@ import { TagList } from "./tag/TagList"
 import { TagForm } from "./tag/TagForm"
 import { TagProvider } from "./tag/TagProvider"
 import { TagDetail } from "./tag/TagDetail"
+// import { BillTag } from "./tag/BillTag"
 
 export const ApplicationViews = () => {
     return (
@@ -65,11 +65,6 @@ export const ApplicationViews = () => {
               <Route exact path="/bills">
                 <BillList />
               </Route>
-              
-  
-              <Route path='/mybills'>
-                  <MyBills />
-              </Route>
 
               <Route exact path="/notes">
                 <NoteList />
@@ -82,6 +77,8 @@ export const ApplicationViews = () => {
               <Route exact path='/tags'>
                   <TagList />
               </Route>
+
+           
               <Route path='/tags/create'>
                   <TagDetail />
               </Route>
