@@ -1,4 +1,9 @@
 .bill_list {
-    border: solid lightgreen;
+    border: solid seagreen;
+    padding: 1em;
+}
+
+.bill_detail {
+    border: solid seagreen;
     padding: 1em;
 }

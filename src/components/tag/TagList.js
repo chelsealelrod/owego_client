@@ -3,10 +3,12 @@ import { useHistory } from 'react-router-dom'
 import { TagContext } from "./TagProvider"
 
 
+//This is the code for listing all Tags
 
 export const TagList = () => {
-    const {getTags, deleteTag} = useContext(TagContext)
-    const [tags, setTags] = useState([])
+    const history = useHistory()
+    const {getTags,tags, tag, deleteTagById} = useContext(TagContext)
+   
     
     const handleDelete = (id) => {
         deleteTag(id)
@@ -20,24 +22,24 @@ export const TagList = () => {
         getTags()
     }, [])
 
-    const history = useHistory()
 
     return(
         <>
-        <div className='tags'>
+        <div className='tags' key={tag.id}>
             <h2 className='tags_title'>Tags</h2>
             <button onClick={() => history.push("/tags/create")}>
                 Create Tag
             </button>
-            <ul className='tags_list'>
+            <ul className='tags_list' >
                 {
                 tags.map(tag => {
                     return (
                         <li>
                           {tag.label}
-                          <button className='tags_edit' 
-                          onClick={() => {history.push(`/tags/edit/${tag.id}`)}}>Edit Tag</button>
-                          <button onClick={() => {handleDelete(tag.id)}}>Delete Tag</button>
+                          <button onClick={() => deleteTagById(tag.id)}>Delete</button>
+                <button onClick={() => {
+                                    history.push(`/tags/edit/${tag.id}`)
+                                }}>Edit</button>
                         </li>
                     )
                 })

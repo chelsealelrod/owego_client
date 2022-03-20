@@ -4,6 +4,7 @@ export const NoteContext = React.createContext();
 
 export const NoteProvider = (props) => {
   const [notes, setNotes] = useState([]);
+  const [billNotes, setRelatedBillNotes] = useState([]);
 
   const getNotes = () => {
     return fetch("http://localhost:8000/notes", {
@@ -26,13 +27,13 @@ export const NoteProvider = (props) => {
     }).then((res) => res.json());
   };
 
-  const deleteNote = (note_id) => {
-    return fetch(`http://localhost:8000/notes/${note_id}`, {
+  const deleteNote = (id) => {
+    return fetch(`http://localhost:8000/notes/${id}`, {
       method: "DELETE",
     }).then(getNotes);
   };
 
-  const editNotes = (note) => {
+  const editNotes = note => {
     return fetch(`http://localhost:8000/notes/${note.id}`, {
       method: "PUT",
       headers: {
@@ -40,17 +41,18 @@ export const NoteProvider = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(note),
-    });
+    })
+    .then(getNotes);
   };
   
 const getNoteByBillId = (billId) => {
-    return fetch(`http://localhost:8000/notes?billId=${billId}`, {
+    return fetch(`http://localhost:8000/notes?bill_id=${billId}`, {
       headers: {
-        Authorization: `Token ${localStorage.getItem("cs_user_id")}`,
+        Authorization: `Token ${localStorage.getItem("owegouser_id")}`,
       },
     })
       .then((res) => res.json())
-      .then(setRelatedNotes);
+      .then(setRelatedBillNotes);
   };
 
       
@@ -62,7 +64,9 @@ const getNoteByBillId = (billId) => {
         deleteNote,
         addNote,
         editNotes,
-        getNoteByBillId
+        getNoteByBillId,
+        billNotes
+
       }}
     >
       {props.children}

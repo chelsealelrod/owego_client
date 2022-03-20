@@ -61,7 +61,6 @@ export const BillProvider = (props) => {
         "Authorization": `Token ${localStorage.getItem("owegouser_id")}`
       }
     })
-      // .then(response => response.json())
       .then(getBills)
   }
 
@@ -72,9 +71,8 @@ export const BillProvider = (props) => {
           Authorization: `Token ${localStorage.getItem("owegouser_id")}`,
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(post)
+        body: JSON.stringify(bill)
     })
-    // .then((response) => response.json()).then(getPosts);
         .then(getBills)
   };
 

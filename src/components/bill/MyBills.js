@@ -26,7 +26,6 @@ export const MyBills = () => {
                     <div className='myBills_post'>
                         <h3>{bill.title}</h3>
                         <p>{bill.amount_due}</p>
-                        <p>Due on {post.publication_date}</p>
                     </div>
                 )
             })

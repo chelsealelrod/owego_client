@@ -5,7 +5,7 @@ import "./Bills.css"
 
 export const BillList = () => {
   const history = useHistory()
-  const {bills,bill, getBills, deleteBillById} = useContext(BillContext);
+  const {bills, getBills, deleteBillById} = useContext(BillContext);
 
 
   useEffect(() => {
@@ -19,14 +19,13 @@ export const BillList = () => {
       <article>
         {
           bills?.map(bill => {
-            console.log(bill)
             return <section key={bill?.id}>
               <ul className="bill_list">
                 <Link to={`/bills/${bill?.id}`}>{bill?.title}</Link><br/>
-                <p>{bill?.categoryId}</p>
-                <p>{bill?.due_date}</p>
-                <p>{bill?.amount_due}</p>
-                <p>{bill?.paid === true?'Paid':'Not Paid'}</p>
+                <li>{bill?.category?.label}</li>
+                <li>Due on:  {bill?.due_date}</li>
+                <li>Amount due:  {bill?.amount_due}</li>
+                <li>{bill?.paid === true?'Paid':'Not Paid'}</li>
                 <button onClick={() => history.push(`/bills/view/${bill?.id}`)}>View Bill</button>
                 <button onClick={() => deleteBillById(bill.id)}>Delete Bill</button>
                 <button onClick={() => {

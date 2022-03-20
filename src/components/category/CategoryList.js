@@ -5,14 +5,16 @@ import { CategoryContext  } from "./CategoryProvider"
 
 
 export const CategoryList = () => { 
-    
-    const {getCategories, deleteCategory, categories } = useContext(CategoryContext)
-    const [setCategories] = useState([])
+    const history = useHistory()
+    const {getCategories, category, deleteCategory, categories } = useContext(CategoryContext)
+
+
+
     const handleDelete = (id) => {
         deleteCategory(id)
         .then(() => {
             const remainingCategories = categories.filter( category => category.id !== id )
-            setCategories(remainingCategories)
+            getCategories(remainingCategories)
         })
     }
 
@@ -20,7 +22,7 @@ export const CategoryList = () => {
         getCategories()
     }, [])
 
-    const history = useHistory()
+    
 
     return(
         <>
@@ -32,19 +34,20 @@ export const CategoryList = () => {
             <ul className='categories_list'>
                 
                 {
-                categories && categories.map(category => {
+                categories.map(category => {
                     return (
                         <li>
                           {category.label}
-                          <button className='categories_edit' 
-                          onClick={() => {history.push(`/categories/edit/${category.id}`)}}>Edit</button>
-                          <button onClick={() => {handleDelete(category.id)}}>Delete Category</button>
+                           <button className='categories_edit' 
+                          onClick={() => {history.push(`/categories/edit/${category.id}`)}}>__Edit</button>
+                          <button onClick={() => {handleDelete(category.id)}}>__Delete</button>
                         </li>
                     )
                    
                 })
                 }
             </ul>
+        
         </div>
     </>
     )

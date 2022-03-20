@@ -4,6 +4,7 @@ export const TagContext = React.createContext();
 
 export const TagProvider = (props) => {
   const [tags, setTags] = useState([]);
+  const [tag, setTag ] = useState({})
 
   const getTags = () => {
     return fetch("http://localhost:8000/tags", {
@@ -23,24 +24,28 @@ export const TagProvider = (props) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(tag),
-    }).then((res) => res.json());
+    }).then((response) => response.json()).then(getTags);
   };
 
-  const deleteTag = (category_id) => {
-    return fetch(`http://localhost:8000/categories/${tag_id}`, {
+  const deleteTagById = (id) => {
+    return fetch(`http://localhost:8000/tags/${id}`, {
       method: "DELETE",
+      headers: {
+        "Authorization": `Token ${localStorage.getItem("owegouser_id")}`
+      }
     }).then(getTags);
   };
 
-  const editTags = (tag) => {
+  const editTagById = tag => {
     return fetch(`http://localhost:8000/tags/${tag.id}`, {
       method: "PUT",
       headers: {
         Authorization: `Token ${localStorage.getItem("owegouser_id")}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(tag),
-    });
+      body: JSON.stringify(tag)
+    })
+      .then(getTags);
   };
 
   return (
@@ -48,9 +53,11 @@ export const TagProvider = (props) => {
       value={{
         tags,
         getTags,
-        deleteTag,
+        deleteTagById,
         addTag,
-        editTags,
+        editTagById,
+        tag,
+        setTag
       }}
     >
       {props.children}

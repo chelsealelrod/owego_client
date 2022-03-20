@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useParams, useHistory } from "react-router"
 import { CategoryContext } from "./CategoryProvider"
 
 export const CategoryForm = () => {
+    
+    const { getCategories, categories, setCategories, editCategories } = useContext(CategoryContext)
     const history = useHistory()
-    const { getCategories, editCategories } = useContext(CategoryContext)
-    const [categories, setCategories] = useState([])
     const [theCategory, setTheCategory] = useState({label: ''})
     const [newCategory, setNewCategory] = useState({})
 
     const { categoryId } = useParams()
 
     useEffect(() => {
-        getCategories()
-        // .then((data) => setCategories(data))
+        getCategories();
+        // setCategories();
     }, [])
 
     useEffect(() => {
@@ -53,7 +53,6 @@ export const CategoryForm = () => {
             </form>
             <button className='category_edit--save' onClick={handleSaveEdit}>Save</button>
             <button className='category_edit--cancel' onClick={() => {history.push('/categories')}}>Cancel</button>
-
         </div>
     )
 }

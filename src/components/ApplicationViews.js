@@ -44,10 +44,6 @@ export const ApplicationViews = () => {
                 <CategoryCreate />
               </Route> 
   
-              <Route path='/categories/edit/:categoryId(\d+)'>
-                <CategoryForm />
-              </Route>
-  
   
               <Route exact path='/bills/create'>
                 <BillForm />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useHistory } from "react-router";
 import { BillContext } from "./BillProvider"
+import "./Bills.css"
 
 export const BillForm = () => {
 
@@ -26,8 +27,7 @@ export const BillForm = () => {
 
 
   useEffect(() => 
-  console.log(currentBill)
-  , [currentBill])
+   [currentBill])
 
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export const BillForm = () => {
       clearBill.categoryId = bill.category.id
       clearBill.dueDate = bill.due_date
       clearBill.amountDue = bill.amount_due
-      clearBill.paid = bill.paid(False)
+      clearBill.paid = bill.paid
       setCurrentBill(clearBill)
     }
   }, [bill])
@@ -77,7 +77,7 @@ export const BillForm = () => {
 
 
   return (
-    <form className="billForm">
+    <form className="billForm" key={bill.id}>
       <h2 className="billForm__title">Add a New Bill</h2>
       <fieldset>
         <div className="form-group">

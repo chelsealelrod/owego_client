@@ -26,9 +26,12 @@ export const CategoryProvider = (props) => {
     }).then((res) => res.json());
   };
 
-  const deleteCategory = (category_id) => {
-    return fetch(`http://localhost:8000/categories/${category_id}`, {
+  const deleteCategory = (id) => {
+    return fetch(`http://localhost:8000/categories/${id}`, {
       method: "DELETE",
+      headers: {
+        "Authorization": `Token ${localStorage.getItem("owegouser_id")}`
+      }
     }).then(getCategories);
   };
 

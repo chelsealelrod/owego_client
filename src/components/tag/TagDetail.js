@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { TagContext } from "./TagProvider";
-import { TagList } from "../tag/TagList";
 
 
 export const TagDetail = () => {
@@ -44,7 +43,7 @@ export const TagDetail = () => {
                      required autoFocus className="form-control" placeholder="Tag"
                      onChange={handleControlledInputChange} defaultValue={tag.label} />
                      <div className='post_detail_tags'>
-                     <TagList tagId = {parseInt(tagId)}/>
+        
             </div>
                 </div>
             </fieldset>
