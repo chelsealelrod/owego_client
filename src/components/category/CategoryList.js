@@ -36,12 +36,14 @@ export const CategoryList = () => {
                 {
                 categories.map(category => {
                     return (
+                        <ul>
                         <li>
                           {category.label}
-                           <button className='categories_edit' 
-                          onClick={() => {history.push(`/categories/edit/${category.id}`)}}>__Edit</button>
-                          <button onClick={() => {handleDelete(category.id)}}>__Delete</button>
                         </li>
+                        <button className='categories_edit' 
+                        onClick={() => {history.push(`/categories/edit/${category.id}`)}}>Edit</button>
+                        <button onClick={() => {handleDelete(category.id)}}>Delete</button>
+                        </ul>
                     )
                    
                 })

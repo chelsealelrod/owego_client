@@ -12,6 +12,12 @@ export const BillList = () => {
     getBills();
   }, [])
 
+  // if (bill?.paid = False) {
+  //   paid = "Not Paid";
+  // } else {
+  //   paid = "Paid";
+  // }
+
   
   return(
     <div>

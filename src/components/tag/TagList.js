@@ -34,13 +34,15 @@ export const TagList = () => {
                 {
                 tags.map(tag => {
                     return (
+                    <ul>
                         <li>
                           {tag.label}
-                          <button onClick={() => deleteTagById(tag.id)}>Delete</button>
-                <button onClick={() => {
-                                    history.push(`/tags/edit/${tag.id}`)
-                                }}>Edit</button>
                         </li>
+                        <button onClick={() => {
+                                    history.push(`/tags/edit/${tag.id}`)
+                                }}>Edit</button><button onClick={() => deleteTagById(tag.id)}>Delete</button>
+               
+                </ul>
                     )
                 })
                 }
