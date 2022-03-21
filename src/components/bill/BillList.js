@@ -19,7 +19,8 @@ export const BillList = () => {
 
 
   return (
-    <div className="bill">
+
+    <div className="bill_list">
       <h2 className="bill_title">Bills</h2>
       <button onClick={() => history.push("/bills/create")}>Create Bill</button>
       <article>

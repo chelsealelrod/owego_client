@@ -5,6 +5,7 @@ import { NoteContext  } from "./NoteProvider"
 
 
 export const NoteList = ({billNotes=[]}) => { 
+    const history = useHistory()
     const {getNotes, deleteNote, note, notes,
          setNotes, getNoteByBillId, editNotes} = useContext(NoteContext)
     const { billId } = useParams()
@@ -28,7 +29,7 @@ export const NoteList = ({billNotes=[]}) => {
                 </li>
                 
                  <button className='notes_edit' 
-                 onClick={() => {history.push(`/notes/edit/${note.id}`)}}>Edit</button>
+                 onClick={() => {editNotes(note.id)}}>Edit</button>
                  <button onClick={() => {deleteNote(note.id)}}>Delete</button>
                  </section>
 
