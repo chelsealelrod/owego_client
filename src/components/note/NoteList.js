@@ -23,9 +23,10 @@ export const NoteList = ({billNotes=[]}) => {
             { 
                 billNotes.map(note => {
                 return (
-                <section key={note.id}>
+                <section key={`note--${note?.id}`}>
                 <li>
                 <p>{note.text}</p>
+                <p>{note.date}</p>
                 </li>
                 
                  <button className='notes_edit' 

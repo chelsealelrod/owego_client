@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { useHistory } from 'react-router-dom'
 import { TagContext } from "./TagProvider"
+import "./Tags.css"
 
 
 //This is the code for listing all Tags
@@ -31,7 +32,7 @@ export const TagList = ({bill_tag}) => {
                 <button onClick={() => history.push("/tags/create")}>
                     Create Tag
                 </button>
-                <ul className='tags_list' >
+                <ul className='tags_list' key={`tag--${tag?.id}`}>
                     {
                         tags.map(tag => {
                             return (

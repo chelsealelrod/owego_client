@@ -1,12 +1,12 @@
 .navbar {
     display: flex;
-    flex-wrap: nowrap;
+    padding: 0 80px;
     justify-content: right;
-    padding: 1em;
+    flex-wrap: nowrap;
 }
 
 .navbar__item {
-    flex-basis: 12%;
-    list-style-type: none;
-    font-weight: bold;
+    padding: 0 50px;
+    text-transform: uppercase;
+    list-style: none;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { TagContext } from "./TagProvider";
+import "./Tags.css"
 
 
 export const TagDetail = () => {

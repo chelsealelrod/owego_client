@@ -27,20 +27,20 @@ export const BillTag = ({ bill_tag }) => {
 
     return (
         <>
-            <div className='tags' key={bill_tag.id}>
+            <div className='tags'>
             
-                <ul className='tags_list' >
+                <ul className='tags_list'>
                     {
 
                                 <>
-                                <ul>
+                                <ul key={`tags--${bill_tag.id}`}>
                                     <label htmlFor="tags">Tags: </label>
                                     <select
                                         name="tags"
                                         required
                                         autoFocus
                                         className="form-control"
-                                        value={currentBillTag.bill_tagId}
+                                        value={currentBillTag.billTagId}
                                         onChange={changeBillTagState}
                                     >
                                         <option className="select_tag" value="0">Select a tag...</option>

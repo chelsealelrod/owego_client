@@ -1,4 +1,4 @@
-.bill_card {
+.container {
     justify-content: center;
     border: solid seagreen;
     padding: 1em;
@@ -19,6 +19,7 @@
 }
 
 .bill_title {
-    display: flex;
-    justify-content: center;
+    display:flex;
+    justify-content: left;
+    color: rgb(57, 57, 201)
 }
