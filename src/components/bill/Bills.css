@@ -1,10 +1,13 @@
 .bill_card {
     border: solid seagreen;
     padding: 1em;
-    margin: 1em, 1em, 1em, 155em;
+    margin: 1em, 1em, 1em, 2em;
+    width: 30em;
 }
 
 .bill_detail {
     border: solid seagreen;
+    margin: 1em, 2em, 1em, 2em;
     padding: 1em;
+    width: 30em;
 }

@@ -14,18 +14,14 @@ export const BillList = () => {
     getBills();
   }, [])
 
-  // if (bill?.paid = False) {
-  //   paid = "Not Paid";
-  // } else {
-  //   paid = "Paid";
-  // }
-
+ 
 
 
 
   return (
     <div className="bill">
       <h2 className="bill_title">Bills</h2>
+      <button onClick={() => history.push("/bills/create")}>Create Bill</button>
       <article>
         {
           bills && bills?.map(bill => {
@@ -47,7 +43,7 @@ export const BillList = () => {
           })
         }
       </article>
-      <button onClick={() => history.push("/bills/create")}>Create Bill</button>
+      
     </div>
   )
 }

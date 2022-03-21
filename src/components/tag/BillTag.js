@@ -15,7 +15,7 @@ export const BillTag = ({ bill_tag }) => {
 
     useEffect(() => {
         getTags()
-    }, [bill_tag])
+    }, [])
 
 
 
@@ -44,8 +44,8 @@ export const BillTag = ({ bill_tag }) => {
                                         onChange={changeBillTagState}
                                     >
                                         <option className="select_tag" value="0">Select a tag...</option>
-                                        {bill_tag.map((tag => (
-                                            <option value={bill_tag.id}>{bill_tag.label}</option>
+                                        {tags.map((t => (
+                                            <option va3lue={t.id}>{t.label}</option>
                                         )))}
                                     </select>
 

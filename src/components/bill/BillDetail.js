@@ -23,17 +23,17 @@ export const BillDetail = () => {
 
     return (
         <div className='bill_detail'>
-            {/* <h3 className="bill_tags">Tags: {bill.tags.map((tag)=>
-            tag?.user.username)}</h3> */}
+            <ul>
             <h3 className='bill_detail_title'>{bill.title}</h3>
-            <p className='bill_detail_category'>{bill.category?.label}</p>
-            <p className='bill_detail_due_date'>Due on: {bill.due_date}</p>
-            <p className='bill_detail_amount_due'>Amount Due: {bill.amount_due}</p>
-            <p className='bill_detail_paid'>Paid: {bill?.paid === true?'Paid':'Not Paid'}</p>
+            <li className='bill_detail_category'>{bill.category?.label}</li>
+            <li className='bill_detail_due_date'>Due on: {bill.due_date}</li>
+            <li className='bill_detail_amount_due'>Amount Due: {bill.amount_due}</li>
+            <li className='bill_detail_paid'>Paid: {bill?.paid === true?'Paid':'Not Paid'}</li>
             <div className='bill_detail_notes'>
                 <NoteForm billId={billId}/>
                 <NoteList billNotes={bill.notes}/>
             </div>
+           </ul>
             
             <button onClick={() => {
                 history.push(`/bills/edit/${bill.id}`)}}>Edit Bill</button>

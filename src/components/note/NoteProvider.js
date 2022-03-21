@@ -51,7 +51,7 @@ export const NoteProvider = (props) => {
   };
   
 const getNoteByBillId = (billId) => {
-    return fetch(`http://localhost:8000/notes?bill_id=${billId}`, {
+    return fetch(`http://localhost:8000/notes?bill__id=${billId}`, {
       headers: {
         Authorization: `Token ${localStorage.getItem("owegouser_id")}`,
       },

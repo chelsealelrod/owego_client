@@ -43,6 +43,11 @@ export const BillForm = () => {
   }, [bill])
 
 
+  // if (bill?.is_paid = False) {
+  //   paid = "Not Paid";
+  // } else {
+  //   paid = "Paid";
+  // }
 
 
   const changeBillTitleState = (event) => {
@@ -129,6 +134,7 @@ export const BillForm = () => {
           <input
             type="checkbox"
             name="paid"
+            checked={currentBill.is_paid}
             required
             autoFocus
             className="form-control"
