@@ -13,7 +13,6 @@ export const CategoryForm = () => {
 
     useEffect(() => {
         getCategories();
-        // setCategories();
     }, [])
 
     useEffect(() => {

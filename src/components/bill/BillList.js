@@ -21,7 +21,7 @@ export const BillList = () => {
   return (
     <>
     <article className="allBills">
-      <h2 className="bill_title">Bills</h2>
+      <h1 className="bill_title">Owe-Go Bills</h1>
       <button onClick={() => history.push("/bills/create")}>Create Bill</button>
       <div className="allCards">
         {bills && bills?.map(bill => {

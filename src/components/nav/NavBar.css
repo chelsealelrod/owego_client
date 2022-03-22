@@ -2,7 +2,8 @@
     display: flex;
     padding: 0 80px;
     justify-content: right;
-    flex-wrap: nowrap;
+    flex-direction:row;
+    background:seagreen;
 }
 
 .navbar__item {

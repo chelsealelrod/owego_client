@@ -21,7 +21,7 @@ export const BillTag = ({ bill_tag }) => {
 
     const changeBillTagState = (event) => {
         const newBillTagState = { ...currentBillTag };
-        newBillTagState.billTagId = event.target.value;
+        newBillTagState.bill_tagId = event.target.value;
         setCurrentBillTag(newBillTagState);
     };
 
@@ -40,7 +40,7 @@ export const BillTag = ({ bill_tag }) => {
                                         required
                                         autoFocus
                                         className="form-control"
-                                        value={currentBillTag.billTagId}
+                                        value={currentBillTag.bill_tagId}
                                         onChange={changeBillTagState}
                                     >
                                         <option className="select_tag" value="0">Select a tag...</option>

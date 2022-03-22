@@ -68,3 +68,8 @@ fieldset {
     min-width: 15rem;
     min-height: 5rem;
 }
+
+.app_title {
+    display:flex;
+    justify-content:center;
+}

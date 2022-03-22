@@ -13,7 +13,7 @@ export const BillForm = () => {
   const [currentBill, setCurrentBill] = useState({
     categoryId: "",
     title: "",
-    dueDate: "",
+    dueDate: new Date(),
     amountDue: "",
     paid: ""
   });
@@ -42,12 +42,16 @@ export const BillForm = () => {
     }
   }, [bill])
 
+//   const billPaidBoolean= () => {
 
-  // if (bill?.is_paid = False) {
-  //   paid = "Not Paid";
-  // } else {
-  //   paid = "Paid";
-  // }
+//     if (paid === 0) {
+
+//     } else {
+//         addTag({
+//             label: tag.label
+//         })
+//     }
+// }
 
 
   const changeBillTitleState = (event) => {
@@ -110,7 +114,11 @@ export const BillForm = () => {
               <option value={category.id}>{category.label}</option>
             ))}
           </select>
-          <label htmlFor="due_date">Due Date: </label>
+          <label htmlFor="date">Due Date:</label>
+                        <input type="date" id="date" name="due_date" required autoFocus className="form-control"
+                            placeholder="Choose Date" onChange={changeDueDateState}
+                            default={currentBill.dueDate} />
+          {/* <label htmlFor="due_date">Due Date: </label>
           <input
             type="text"
             name="due_date"
@@ -119,7 +127,7 @@ export const BillForm = () => {
             className="form-control"
             value={currentBill.dueDate}
             onChange={changeDueDateState}
-          />
+          /> */}
           <label htmlFor="amount_due">Amount Due: </label>
           <input
             type="text"

@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
 import "./Auth.css"
+import dollarsign from '../images/dollarsign.png'
 
 
 export const Login = () => {
@@ -43,8 +44,10 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Owe-Go</h1>
-                    <h2>Please sign in</h2>
+                    <h1 className="app_title">Owe-Go</h1>
+                    <div>
+                        <img className="logo" src={dollarsign} />
+                    </div>
                     <fieldset>
                         <label htmlFor="inputUsername"> Username address </label>
                         <input ref={username} type="username" id="username" className="form-control" placeholder="Username address" required autoFocus />
