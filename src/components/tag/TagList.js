@@ -29,26 +29,29 @@ export const TagList = ({bill_tag}) => {
         <>
             <div className='tags' key={tag.id}>
                 <h1 className='tags_title'>Tags</h1>
-                <button onClick={() => history.push("/tags/create")}>
+                <button className="create-tag" onClick={() => history.push("/tags/create")}>
                     Create Tag
                 </button>
-                <ul className='tags_list' key={`tag--${tag?.id}`}>
+                <div className='tags_list' key={`tag--${tag?.id}`}>
                     {
                         tags.map(tag => {
                             return (
-                    <ul>
-                        <li>
-                          {tag.label}
-                        </li>
-                        <button onClick={() => {
+                    <div className="tags_container">
+                        
+                          <p className="tag_label">{tag.label}</p>
+                        
+                        <button className="tag-btn" onClick={() => {
                                     history.push(`/tags/edit/${tag.id}`)
-                                }}>Edit</button><button onClick={() => deleteTagById(tag.id)}>Delete</button>
+                                }}>Edit</button>
+
+                        <button className="tag-btn" 
+                                 onClick={() => deleteTagById(tag.id)}>Delete</button>
                
-                </ul>
+                </div>
                 )
                 })
                 }
-            </ul>
+            </div>
         </div>
     </>
     )

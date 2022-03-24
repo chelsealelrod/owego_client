@@ -28,7 +28,7 @@ export const CategoryList = () => {
         <>
         <div className='categories'>
             <h1 className='categories_title'>Categories</h1>
-            <button onClick={() => history.push("/categories/create")}>
+            <button className="create-category-btn" onClick={() => history.push("/categories/create")}>
                 Create Category
             </button>
             <ul className='categories_list' key={`category--${category?.id}`}>
@@ -36,14 +36,14 @@ export const CategoryList = () => {
                 {
                 categories.map(category => {
                     return (
-                        <ul>
-                        <li>
-                          {category.label}
-                        </li>
-                        <button className='categories_edit' 
+                        <div className="category_container">
+                        
+                         <p className="category_label"> {category.label} </p>
+                        
+                        <button className="category-btn" 
                         onClick={() => {history.push(`/categories/edit/${category.id}`)}}>Edit</button>
-                        <button onClick={() => {handleDelete(category.id)}}>Delete</button>
-                        </ul>
+                        <button className="category-btn" onClick={() => {handleDelete(category.id)}}>Delete</button>
+                        </div>
                     )
                    
                 })

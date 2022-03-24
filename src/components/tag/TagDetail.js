@@ -43,9 +43,7 @@ export const TagDetail = () => {
                     <input type="text" id="label" ref={label} 
                      required autoFocus className="form-control" placeholder="Tag"
                      onChange={handleControlledInputChange} defaultValue={tag.label} />
-                     <div className='post_detail_tags'>
-        
-            </div>
+             
                 </div>
             </fieldset>
             <button type="submit"
@@ -53,7 +51,7 @@ export const TagDetail = () => {
                     event.preventDefault()
                     handleSaveTag()
                 }}
-                className="btn btn-primary">
+                className="save-tag-btn">
                     Save Tag
                 </button>
         </form>

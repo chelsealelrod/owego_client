@@ -175,7 +175,7 @@ export const BillForm = () => {
               createBill(bill).then(() => history.push("/bills"))
           }
         }}
-        className="create-bill-button"
+        className="create-submit-bill-button"
       >
         Create
       </button>

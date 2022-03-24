@@ -23,19 +23,19 @@ export const BillDetail = () => {
 
     return (
         <div className='bill_detail'>
-            <ul>
+            
             <h3 className='bill_detail_title'>{bill.title}</h3>
-            <li className='bill_detail_category'>{bill.category?.label}</li>
-            <li className='bill_detail_due_date'>Due on: {bill.due_date}</li>
-            <li className='bill_detail_amount_due'>Amount Due: {bill.amount_due}</li>
-            <li className='bill_detail_paid'>Paid: {bill?.paid === true?'Paid':'Not Paid'}</li>
+            <p className='bill_detail_list'>{bill.category?.label}</p>
+            <p className='bill_detail_list'>Due on: {bill.due_date}</p>
+            <p className='bill_detail_list'>Amount Due: {bill.amount_due}</p>
+            <p className='bill_detail_paid'>{bill?.paid === true?'Paid':'Not Paid'}</p>
             <div className='bill_detail_notes'>
                 <NoteForm billId={billId}/>
                 <NoteList billNotes={bill.notes}/>
             </div>
-           </ul>
-            
-            <button onClick={() => {
+           
+            <br></br>
+            <button className="edit_detail-bill-btn" onClick={() => {
                 history.push(`/bills/edit/${bill.id}`)}}>Edit Bill</button>
         </div>
     )

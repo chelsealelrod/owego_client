@@ -1,0 +1,26 @@
+.notes_title {
+    display:flex;
+    justify-content: center;
+    color: blue;
+}
+
+.note_list {
+    display:flex;
+    justify-content: center;
+}
+
+.notes_edit {
+    padding: 5px;
+}
+
+.notes_delete {
+    padding: 5px;
+}
+
+.note_edit--save {
+    padding: 5px;
+}
+
+.note_edit--cancel {
+    padding: 5px;
+}

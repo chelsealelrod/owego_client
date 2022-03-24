@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useContext } from "react"
 import { useParams, useHistory } from "react-router"
 import { NoteContext } from "./NoteProvider"
+import { BillContext } from "../bill/BillProvider"
 
 export const NoteForm = ({ billId }) => {
     const history = useHistory()
-    const { editNotes, getNoteByBillId, addNote } = useContext(NoteContext)
+    const {  getNoteByBillId, addNote } = useContext(NoteContext)
+    const { getBillById } = useContext(BillContext)
     const [note, setNote] = useState({})
     const [theNote, setTheNote] = useState({ label: '' })
     const [newNote, setNewNote] = useState({})
@@ -29,7 +31,8 @@ export const NoteForm = ({ billId }) => {
             date: current.toLocaleDateString()
         }).then(() => {
             getNoteByBillId(billId)
-        })
+        }).then(() => getBillById(billId)).then(() => history.push(`/bills/view/${billId}`))
+        
     }
 
     return (
@@ -47,30 +50,11 @@ export const NoteForm = ({ billId }) => {
                 </fieldset>
             </form>
 
-            <button className='category_edit--save' onClick={handleSaveEdit}>Save</button>
-            <button className='category_edit--cancel' onClick={() => {history.push('/notes')}}>Cancel</button>
-            {/* <button
-                type="submit"
-                onClick={(evt) => {
-                    // Prevent form from being submitted
-                    evt.preventDefault();
-
-                    const note = {
-                        id: parseInt(noteId),
-                        text: newNote.text,
-                        date: newNote.date
-                        
-                    };
-                    // Send POST request to your API
-                    {
-                        noteId ? handleSaveEdit(note).then(() => history.push("/bills")) :
-                            addNote(note).then(() => history.push("/bills"))
-                    }
-                }}
-                className="create-note-button"
-            >
-                Create
-            </button> */}
+            <button className='note_edit--save' onClick={handleSaveEdit}
+                >Save</button>
+            <button className='note_edit--cancel'
+             onClick={() => {history.push('/notes')}}>Cancel</button>
+            
 
         </div >
     )

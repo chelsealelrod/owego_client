@@ -1,11 +1,101 @@
 .tags_title {
-    color:rgb(57, 57, 201);
+    text-shadow: 0 0 10px darkgreen, 0 0 10px darkslategray;
 }
 
 .tagForm_title {
-    color: rgb(57, 57, 201);
+    display: flex;
+    justify-content: center;
+    text-shadow: 0 0 2px black, 0 0 20px darkslategray;
+    background-color:rgba(155, 133, 133, 0.4);
+
+}
+
+.tags {
+    text-align: center;
+}
+
+ .tags_list {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .tag_edit--save {
     border: solid black;
+    margin-right: 3px;
+    background: black;
+}
+
+.tag_edit--cancel {
+    border: solid black;
+    background: black;
+}
+
+.form-control {
+    background: grey;
+    width: 20%;
+}
+
+.tag_label {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    /* background:darkslategray; */
+}
+
+.tags_list {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    /* border: solid gray; */
+    padding: 5px;
+    margin-left: 50px;
+}
+
+.tag-btn {
+    /* display: flex;
+    justify-content: center; */
+    padding: 3px;
+   
+
+}
+
+.tag_edit_form_group {
+    text-shadow: 0 0 2px black, 0 0 20px blue;
+    background-color:rgba(155, 133, 133, 0.4);
+    width: 30%;
+}
+
+.create-tag {
+    display: flex;
+    justify-content: center;
+    margin-left: 565px;
+    margin-right: 400px;
+    margin-bottom: 5px;
+    background:black;
+    padding: 10px;
+}
+
+
+.tags_container {
+    background: darkslategray;
+    margin-left: 280px;
+    margin-right: 280px;
+    padding: 2px;
+    width: 50%
+}  
+
+.form-group {
+    color:blue;
+    font-size:x-large;
+    font-weight:bold;
+    background:darkslategray;
+}
+
+.form-control {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.save-tag-btn {
+    background:black;
 }

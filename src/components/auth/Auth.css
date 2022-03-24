@@ -72,4 +72,22 @@ fieldset {
 .app_title {
     display:flex;
     justify-content:center;
+    font-size: 500%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0em;
+}
+
+.image {
+    display:flex;
+    justify-content:center;
+    margin-top: 1px;
+    margin-left: 200px;
+    margin-right: 200px;
+  
+}
+
+.logo {
+    border-radius: 50%;
+    width: 100%;
+    height: 50%;
 }

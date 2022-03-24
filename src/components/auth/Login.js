@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom"
 import "./Auth.css"
-import dollarsign from '../images/dollarsign.png'
+import OweGo from '../images/OweGo.png'
 
 
 export const Login = () => {
@@ -45,8 +45,8 @@ export const Login = () => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1 className="app_title">Owe-Go</h1>
-                    <div>
-                        <img className="logo" src={dollarsign} />
+                    <div className="image">
+                        <img className="logo" src={OweGo} />
                     </div>
                     <fieldset>
                         <label htmlFor="inputUsername"> Username address </label>

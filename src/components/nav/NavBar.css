@@ -1,13 +1,16 @@
 .navbar {
     display: flex;
-    padding: 0 80px;
+    padding: 10px;
     justify-content: right;
     flex-direction:row;
-    background:seagreen;
+    background: darkslategray;
+    font: rgb(50, 2, 2);
+    border: 10px solid white;
 }
 
 .navbar__item {
     padding: 0 50px;
     text-transform: uppercase;
     list-style: none;
+    font: green;
 }

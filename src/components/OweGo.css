@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: url("https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724241_1280.jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.background_photo {
+  flex-direction:center;
+  justify-content:center;
+  margin: 0em 2em 10em;
+  width: 50%;
+  height: auto;
+
 }
 
 .App-link {
@@ -36,3 +45,5 @@
     transform: rotate(360deg);
   }
 }
+
+

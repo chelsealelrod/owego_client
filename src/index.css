@@ -5,6 +5,7 @@
 body, button, input, select, textarea {
     color: #404040;
     font-family: "Comfortaa", Arial, sans-serif;
+	background: url("https://g.foolcdn.com/image/?url=https%3A//g.foolcdn.com/editorial/images/533668/money-falling-from-sky_gettyimages-934096022.jpg&w=2000&op=resize");
     font-size: 1.1rem;
     line-height: 1.5;
     padding: 0;
@@ -43,15 +44,20 @@ code {
 	border: none;
 	font-family: Menlo;
 	font-size: inherit;
-	color: inherit;
-	background: none;
+	color: #FFFFFF;
+	background-color: #4eb5;
 	cursor: pointer;
-	padding: 25px 80px;
+	padding: 0.3em 1.2em;
+	border-radius: 2em;
+	box-sizing: border-box;
 	display: inline-block;
-	margin: 15px 30px;
+	margin: 0 0.3em 0.3em 0;
 	text-transform: uppercase;
+	text-align: center;
+	transition: all 0.2s;
+	text-decoration: none;
 	letter-spacing: 1px;
-	font-weight: 700;
+	font-weight: 300;
 	outline: none;
 	position: relative;
 	-webkit-transition: all 0.3s;
@@ -91,16 +97,16 @@ code {
 
 /* Button 1 */
 .btn-1 {
-	background: #3498db;
+	background: rgb(8, 6, 12);
 	color: #fff;
 }
 
 .btn-1:hover {
-	background: #2980b9;
+	background: rgb(8, 6, 12);
 }
 
 .btn-1:active {
-	background: #2980b9;
+	background: rgb(8, 6, 12);
 	top: 2px;
 }
 
