@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useHistory } from "react-router";
 import { BillContext } from "./BillProvider"
+import "./Bills.css"
 
 export const BillForm = () => {
 
@@ -12,7 +13,7 @@ export const BillForm = () => {
   const [currentBill, setCurrentBill] = useState({
     categoryId: "",
     title: "",
-    dueDate: "",
+    dueDate: new Date(),
     amountDue: "",
     paid: ""
   });
@@ -26,8 +27,7 @@ export const BillForm = () => {
 
 
   useEffect(() => 
-  console.log(currentBill)
-  , [currentBill])
+   [currentBill])
 
 
   useEffect(() => {
@@ -37,12 +37,21 @@ export const BillForm = () => {
       clearBill.categoryId = bill.category.id
       clearBill.dueDate = bill.due_date
       clearBill.amountDue = bill.amount_due
-      clearBill.paid = bill.paid(False)
+      clearBill.paid = bill.paid
       setCurrentBill(clearBill)
     }
   }, [bill])
 
+//   const billPaidBoolean= () => {
 
+//     if (paid === 0) {
+
+//     } else {
+//         addTag({
+//             label: tag.label
+//         })
+//     }
+// }
 
 
   const changeBillTitleState = (event) => {
@@ -77,7 +86,7 @@ export const BillForm = () => {
 
 
   return (
-    <form className="billForm">
+    <form className="billForm" key={bill.id}>
       <h2 className="billForm__title">Add a New Bill</h2>
       <fieldset>
         <div className="form-group">
@@ -105,7 +114,11 @@ export const BillForm = () => {
               <option value={category.id}>{category.label}</option>
             ))}
           </select>
-          <label htmlFor="due_date">Due Date: </label>
+          <label htmlFor="date">Due Date:</label>
+                        <input type="date" id="date" name="due_date" required autoFocus className="form-control"
+                            placeholder="Choose Date" onChange={changeDueDateState}
+                            default={currentBill.dueDate} />
+          {/* <label htmlFor="due_date">Due Date: </label>
           <input
             type="text"
             name="due_date"
@@ -114,7 +127,7 @@ export const BillForm = () => {
             className="form-control"
             value={currentBill.dueDate}
             onChange={changeDueDateState}
-          />
+          /> */}
           <label htmlFor="amount_due">Amount Due: </label>
           <input
             type="text"
@@ -129,6 +142,7 @@ export const BillForm = () => {
           <input
             type="checkbox"
             name="paid"
+            checked={currentBill.is_paid}
             required
             autoFocus
             className="form-control"
@@ -161,7 +175,7 @@ export const BillForm = () => {
               createBill(bill).then(() => history.push("/bills"))
           }
         }}
-        className="create-bill-button"
+        className="create-submit-bill-button"
       >
         Create
       </button>

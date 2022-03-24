@@ -1,66 +1,45 @@
-import React, { useEffect, useContext } from "react"
-import { useHistory } from 'react-router-dom'
+import React, { useEffect, useContext, useState } from "react"
+import { useHistory, useParams } from 'react-router-dom'
 import { NoteContext  } from "./NoteProvider"
-// import "./Notes.css"
+import { BillContext } from "../bill/BillProvider"
+import "./Notes.css"
 
 
-export const NoteList = () => { 
-    
-    const {getNotes, deleteNote, notes, setNotes} = useContext(NoteContext)
-    const handleDelete = (id) => {
-        deleteNote(id)
-        .then(() => {
-            const remainingNotes = notes.filter( note => note.id !== id )
-            setNotes(remainingNotes)
-        })
-    }
-
-    useEffect(() => {
-        getNotes()
-        getNoteByBillId()
-    }, [])
-
-    useEffect(() => {
-        const relatedNotes = notes.filter(note => note.bill_id === billId )
-        setTheNotes(relatedNotes)
-      },[notes, billId])
-
+export const NoteList = ({billNotes=[]}) => { 
     const history = useHistory()
+    const {getNotes, deleteNote, note, notes,
+         setNotes, getNoteByBillId, editNotes} = useContext(NoteContext)
+    const { getBillById } = useContext(BillContext)
+    const { billId } = useParams()
+    const parsedBillId = parseInt(billId)
+    
+    useEffect(() => {
+    }, [billNotes])
+ 
+    
 
     return(
         <>
         <div className='notes'>
             <h2 className='notes_title'>Notes</h2>
             { 
-                theNotes.length > 0?
-                theNotes.map(note => {
-                return <section key={note.id}>
-                <li>
-                <p>{note.text}</p>
-                </li>
-                </section>
-          }):""
-        }
-            <button onClick={() => history.push("/notes/create")}>
-                Create Note
-            </button>
-            <ul className='notes_list'>
+                billNotes.map(note => {
+                return (
+                <section key={`note--${note?.id}`}>
+                <div>
+                <p className="note_list">{note.text}</p>
+                <p className="note_list">{note.date}</p>
+                </div>
                 
-                {
-                notes && notes.map(note => {
-                    return (
-                        <li>
-                          {note.text}
-                          <button className='notes_edit' 
-                          onClick={() => {history.push(`/notes/edit/${note.id}`)}}>Edit</button>
-                          <button onClick={() => {handleDelete(note.id)}}>Delete Note</button>
-                        </li>
-                    )
-                   
-                })
-                }
-            </ul>
+                 <button className="notes_edit" 
+                 onClick={() => {editNotes(note.id)}}>Edit</button>
+                 <button  className="notes_delete" onClick={() => {deleteNote(note.id)
+                .then(() => getBillById(billId))}}>Delete</button>
+                 </section>
+
+                )})
+        }
         </div>
     </>
     )
-}
+    }

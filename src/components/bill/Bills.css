@@ -1,4 +1,153 @@
-.bill_list {
-    border: solid lightgreen;
+.container {
+   justify-content: center;
+   border: 15px solid white;
+   padding: 1em;
+   margin: 1em, 5em, 1em, 5em;
+   width: 30em;
+}
+
+.allCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 25px;
+    padding: 30px;
+}
+
+.bill_detail {
+    border: 15px solid white;
+    margin-left: 300px;
+    margin-right: 200px;
+    margin-bottom: 1px;
+    margin-top: 1px;
     padding: 1em;
+    width: 30em;
+    background: darkslategray;
+    
+}
+
+.bill_list {
+    justify-content: center;
+    margin: 4em, 3em, 1em, 4em;
+}
+
+.bill_title {
+    display:flex;
+    justify-content: center;
+    color: skyblue;
+    text-shadow: 0 0 10px darkgreen, 0 0 10px darkslategray;
+    background-color:rgba(155, 133, 133, 0.4);
+}
+
+.card {
+    display:flex;
+    justify-content: center;
+    padding: 0.1rem;
+    margin: 0.6rem;
+    width: 40%;
+    font-size:medium;
+    background: darkslategray;
+}
+
+.card-list {
+    display: flex;
+    justify-content: center;
+}
+
+.card-list-title {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 900;
+    color: blue;
+}
+
+.card-list-paid {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 900;
+    color: blue;
+}
+
+.createBillButton {
+    display:flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.View-Bill-Button {
+    padding: 5px;
+     
+}
+
+.Delete-Bill-Button {
+    padding: 5px;
+}
+
+.Edit-Bill-Button {
+    padding: 5px;
+}
+
+.create-bill-button {
+    display: flex;
+    justify-content: center;
+    margin-left: 520px;
+    margin-right: 400px;
+    margin-bottom: 5px;
+    background:black;
+    padding: 10px;
+    width: 200px;
+}
+
+.bill_detail_title {
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    color: blue;
+}
+
+.bill_detail_list {
+    display: flex;
+    justify-content: center;
+    margin: 4em, 3em, 1em, 4em;
+
+}
+
+.bill_detail_paid {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 900;
+    color: blue;
+}
+
+.edit_detail-bill-btn {
+    display: flex;
+    justify-content: right;
+    padding: 5px;
+}
+
+.billForm {
+    margin-left: 400px;
+    margin-right: 400px;
+    padding: 1em;
+    background-color:darkslategray;
+}
+
+.billForm__title {
+    text-shadow: 0 0 10px darkgreen, 0 0 10px darkslategray;
+}
+
+.create-submit-bill-button {
+    display: flex;
+    justify-content: left;
+    margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 5px;
+    background: black;
+    padding: 10px;
+    width: 90px;
 }

@@ -1,10 +1,16 @@
 .navbar {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    padding: 10px;
+    justify-content: right;
+    flex-direction:row;
+    background: darkslategray;
+    font: rgb(50, 2, 2);
+    border: 10px solid white;
 }
 
 .navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
+    padding: 0 50px;
+    text-transform: uppercase;
+    list-style: none;
+    font: green;
 }

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useParams, useHistory } from "react-router"
 import { TagContext } from "./TagProvider"
 
 export const TagForm = () => {
+    
+    const { getTags, tags, editTagById, addtag } = useContext(TagContext)
     const history = useHistory()
-    const { getTags, editTags } = useContext(TagContext)
-    const [tags] = useState([])
     const [tag, setTag] = useState({label: ''})
     const [newTag, setNewTag] = useState({})
 
@@ -29,13 +29,14 @@ export const TagForm = () => {
     const handleSaveEdit = (e) => {
         e.preventDefault()
 
-        editTags({
+        editTagById({
             id: tag.id,
             label: newTag.label
         }).then(() =>{
            history.push('/tags')
         })
     }
+
 
     return (
         <div className='tag_edit'>

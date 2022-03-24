@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { TagContext } from "./TagProvider";
-import { TagList } from "../tag/TagList";
+import "./Tags.css"
 
 
 export const TagDetail = () => {
@@ -43,9 +43,7 @@ export const TagDetail = () => {
                     <input type="text" id="label" ref={label} 
                      required autoFocus className="form-control" placeholder="Tag"
                      onChange={handleControlledInputChange} defaultValue={tag.label} />
-                     <div className='post_detail_tags'>
-                     <TagList tagId = {parseInt(tagId)}/>
-            </div>
+             
                 </div>
             </fieldset>
             <button type="submit"
@@ -53,7 +51,7 @@ export const TagDetail = () => {
                     event.preventDefault()
                     handleSaveTag()
                 }}
-                className="btn btn-primary">
+                className="save-tag-btn">
                     Save Tag
                 </button>
         </form>
