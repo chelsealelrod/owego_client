@@ -44,7 +44,7 @@ export const Login = () => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1 className="app_title">Owe-Go</h1>
+                    {/* <h1 className="app_title">Owe-Go</h1> */}
                     <div className="image">
                         <img className="logo" src={OweGo} />
                     </div>

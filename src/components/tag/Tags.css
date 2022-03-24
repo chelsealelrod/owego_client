@@ -1,5 +1,9 @@
 .tags_title {
-    text-shadow: 0 0 10px darkgreen, 0 0 10px darkslategray;
+    display: flex;
+    justify-content: center;
+    text-shadow: 0 0 2px black, 0 0 20px darkslategray;
+    background-color:rgba(155, 133, 133, 0.4);
+
 }
 
 .tagForm_title {
@@ -48,7 +52,8 @@
     justify-content:center;
     /* border: solid gray; */
     padding: 5px;
-    margin-left: 50px;
+    margin-left: 10px;
+    margin-right: 60px;
 }
 
 .tag-btn {
@@ -68,7 +73,7 @@
 .create-tag {
     display: flex;
     justify-content: center;
-    margin-left: 565px;
+    margin-left: 515px;
     margin-right: 400px;
     margin-bottom: 5px;
     background:black;
@@ -78,10 +83,11 @@
 
 .tags_container {
     background: darkslategray;
-    margin-left: 280px;
-    margin-right: 280px;
+    margin-left: 400px;
+    margin-right: 400px;
     padding: 2px;
-    width: 50%
+    width: 30%;
+    border:solid white;
 }  
 
 .form-group {
@@ -92,10 +98,15 @@
 }
 
 .form-control {
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 20px;
+    margin-right: 50px;
 }
 
 .save-tag-btn {
     background:black;
+}
+
+.select_tag {
+    display: flex;
+    justify-content: center;
 }

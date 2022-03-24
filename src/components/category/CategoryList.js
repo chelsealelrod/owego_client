@@ -40,9 +40,9 @@ export const CategoryList = () => {
                         
                          <p className="category_label"> {category.label} </p>
                         
-                        <button className="category-btn" 
+                        <button className="category-edit-btn" 
                         onClick={() => {history.push(`/categories/edit/${category.id}`)}}>Edit</button>
-                        <button className="category-btn" onClick={() => {handleDelete(category.id)}}>Delete</button>
+                        <button className="category-delete-btn" onClick={() => {handleDelete(category.id)}}>Delete</button>
                         </div>
                     )
                    

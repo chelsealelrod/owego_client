@@ -31,8 +31,9 @@
 
 .category_label {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     padding: 2px;
+
 }
 
 .category_container {
@@ -51,12 +52,17 @@
     background:darkslategray;
 }
 
-.category-btn {
-    text-align: center;
+.category-edit-btn {
     padding: 3px;
-    margin-left: 3px;
-    margin-right: 10px;
+    margin-left: 115px;
+    margin-right: 1px;
 
+}
+
+.category-delete-btn {
+    padding: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .category_edit--cancel {
