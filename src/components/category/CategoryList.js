@@ -6,7 +6,8 @@ import "./Category.css"
 
 export const CategoryList = () => { 
     const history = useHistory()
-    const {getCategories, category, deleteCategory, categories } = useContext(CategoryContext)
+    const {getCategories, category,
+         deleteCategory, categories } = useContext(CategoryContext)
 
 
 

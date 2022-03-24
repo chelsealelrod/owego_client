@@ -8,16 +8,11 @@ import "./Tags.css"
 
 export const TagList = ({bill_tag}) => {
     const history = useHistory()
-    const { getTags, tags, tag, deleteTagById } = useContext(TagContext)
+    const { getTags, tags, tag, 
+        deleteTagById } = useContext(TagContext)
 
 
-    // const handleDelete = (id) => {
-    //     deleteTag(id)
-    //     .then(() => {
-    //         const remainingTags = tags.filter( tag => tag.id !== id )
-    //         setTags(remainingTags)
-    //     })
-    // }
+
 
     useEffect(() => {
         getTags()

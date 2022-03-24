@@ -2,7 +2,6 @@ import React, { useEffect, useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { BillContext } from "./BillProvider";
 import { BillTag } from "../tag/BillTag";
-import Card from 'react-bootstrap/Card';
 import "./Bills.css"
 
 export const BillList = () => {
@@ -14,8 +13,6 @@ export const BillList = () => {
   useEffect(() => {
     getBills();
   }, [])
-
- 
 
 
 

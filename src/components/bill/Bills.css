@@ -3,7 +3,7 @@
    border: 15px solid white;
    padding: 1em;
    margin: 1em, 5em, 1em, 5em;
-   width: 30em;
+   width: 25em;
 }
 
 .allCards {
@@ -94,8 +94,8 @@
 .create-bill-button {
     display: flex;
     justify-content: center;
-    margin-left: 495px;
-    margin-right: 200px;
+    margin-left: 520px;
+    margin-right: 400px;
     margin-bottom: 1px;
     background:black;
     padding: 10px;
