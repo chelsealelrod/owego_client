@@ -4,7 +4,7 @@ import { TagContext } from "./TagProvider"
 import "./Tags.css"
 
 
-//This is the code for listing all Tags
+//This is the code for listing all BillTags
 
 export const BillTag = ({ bill_tag }) => {
     const history = useHistory()

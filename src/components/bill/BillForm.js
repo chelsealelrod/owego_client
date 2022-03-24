@@ -42,16 +42,6 @@ export const BillForm = () => {
     }
   }, [bill])
 
-//   const billPaidBoolean= () => {
-
-//     if (paid === 0) {
-
-//     } else {
-//         addTag({
-//             label: tag.label
-//         })
-//     }
-// }
 
 
   const changeBillTitleState = (event) => {
@@ -118,16 +108,7 @@ export const BillForm = () => {
                         <input type="date" id="date" name="due_date" required autoFocus className="form-control"
                             placeholder="Choose Date" onChange={changeDueDateState}
                             default={currentBill.dueDate} />
-          {/* <label htmlFor="due_date">Due Date: </label>
-          <input
-            type="text"
-            name="due_date"
-            required
-            autoFocus
-            className="form-control"
-            value={currentBill.dueDate}
-            onChange={changeDueDateState}
-          /> */}
+
           <label htmlFor="amount_due">Amount Due: </label>
           <input
             type="text"
@@ -153,7 +134,7 @@ export const BillForm = () => {
         </div>
       </fieldset>
 
-      {/* You create the rest of the input fields for each game property */}
+  
 
       <button
         type="submit"
