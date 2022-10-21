@@ -12,31 +12,32 @@ fieldset {
 .form--login {
     display: inline-block;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .form--login > fieldset > input[type="email"],
 .form--login > fieldset > input[type="password"] {
-    width: 25em;
+    width: 15em;
+    
 }
 
 .label--login {
-    width: 8rem;
+    width: 10rem;
     display: inline-block;
 }
 
 .form-control {
     display: block;
-    width: 80%;
+    width: 20em;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    margin-left: 10px;
-    margin-right: 600px;
+    margin-left: 12em;
+    margin-right: 10em;
     color: #495057;
-    background-color: #fff;
+    background: black;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
@@ -51,7 +52,6 @@ fieldset {
 .form--login {
     background-size:auto;
     background-position-x: center;
-    /* background-image: url('../images/OweGo.png'); */
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;
@@ -76,7 +76,7 @@ fieldset {
 .app_title {
     display:flex;
     justify-content:center;
-    font-size: 500%;
+    font-size: 50px;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding: 0em;
 }
@@ -101,5 +101,23 @@ fieldset {
 
 .link--register {
     background: darkgray;
+    text-align: center;
 }
 
+.username-input {
+    margin-left: 7em;
+    margin-right: 8em;
+}
+
+.username-control {
+    background: black;
+}
+
+.password-input {
+    margin-left: 7em;
+    margin-right: 8em;
+}
+
+.password-control {
+    background: black;
+}

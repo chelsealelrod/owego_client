@@ -34,9 +34,9 @@
     background: black;
 }
 
-.form-control {
+.tagForm-control {
     background: grey;
-    width: 20%;
+    width: 50%;
 }
 
 .tag_label {
@@ -97,10 +97,6 @@
     background:darkslategray;
 }
 
-.form-control {
-    margin-left: 20px;
-    margin-right: 50px;
-}
 
 .save-tag-btn {
     background:black;
@@ -109,4 +105,6 @@
 .select_tag {
     display: flex;
     justify-content: center;
+    background: darkgray;
+    margin-left: 3em;
 }

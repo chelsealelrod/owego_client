@@ -86,7 +86,7 @@ export const BillForm = () => {
             name="title"
             required
             autoFocus
-            className="form-control"
+            className="bill-form-control"
             value={currentBill.title}
             onChange={changeBillTitleState}
           />
@@ -95,7 +95,7 @@ export const BillForm = () => {
             name="categories"
             required
             autoFocus
-            className="form-control"
+            className="bill-form-control"
             value={currentBill.categoryId}
             onChange={changeCategoryState}
           >
@@ -105,7 +105,7 @@ export const BillForm = () => {
             ))}
           </select>
           <label htmlFor="date">Due Date:</label>
-                        <input type="date" id="date" name="due_date" required autoFocus className="form-control"
+                        <input type="date" id="date" name="due_date" required autoFocus className="bill-form-control"
                             placeholder="Choose Date" onChange={changeDueDateState}
                             default={currentBill.dueDate} />
 
@@ -115,7 +115,7 @@ export const BillForm = () => {
             name="content"
             required
             autoFocus
-            className="form-control"
+            className="bill-form-control"
             value={currentBill.amountDue}
             onChange={changeAmountDueState}
           />
@@ -126,7 +126,7 @@ export const BillForm = () => {
             checked={currentBill.is_paid}
             required
             autoFocus
-            className="form-control"
+            className="bill-form-control"
             value={currentBill.paid}
             onChange={changePaidState}
           />

@@ -48,13 +48,14 @@ export const Login = () => {
                     <div className="image">
                         <img className="logo" src={OweGo} />
                     </div>
-                    <fieldset>
+                    <fieldset className="username-input">
                         <label htmlFor="inputUsername"> Username address </label>
-                        <input ref={username} type="username" id="username" className="form-control" placeholder="Username address" required autoFocus />
+                        <input ref={username} type="username" id="username" 
+                        className="username-control" placeholder="Username address" required autoFocus />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="password-input">
                         <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
+                        <input ref={password} type="password" id="password" className="password-control" placeholder="Password" required />
                     </fieldset>
                     <fieldset style={{
                         textAlign: "center"

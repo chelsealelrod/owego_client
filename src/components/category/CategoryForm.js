@@ -43,7 +43,7 @@ export const CategoryForm = () => {
                 <fieldset>
                     <div className="category_edit_form_group">
                             <label htmlFor="name">Category Name: </label>
-                            <input type="text" name="label" required autoFocus className="form-control"
+                            <input type="text" name="label" required autoFocus className="catForm-control"
                                 placeholder="Category label"
                                 defaultValue={theCategory.label}
                                 onChange={handleControlledInputChange}/>

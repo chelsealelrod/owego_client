@@ -44,7 +44,7 @@ export const TagForm = () => {
                 <fieldset>
                     <div className="tag_edit_form_group">
                             <label htmlFor="name">Tag Name: </label>
-                            <input type="text" name="label" required autoFocus className="form-control"
+                            <input type="text" name="label" required autoFocus className="tagForm-control"
                                 placeholder="Tag label"
                                 defaultValue={tag.label}
                                 onChange={handleControlledInputChange}/>
