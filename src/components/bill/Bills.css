@@ -151,3 +151,16 @@
     padding: 10px;
     width: 90px;
 }
+
+.bill-form-control {
+    display: flex;
+    margin-left: 0em;
+    background: darkgray;
+    
+}
+
+.form-group {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 0em;
+}

@@ -41,7 +41,7 @@ export const TagDetail = () => {
                 <div className="form-group">
                     <label htmlFor="label">Tag: </label>
                     <input type="text" id="label" ref={label} 
-                     required autoFocus className="form-control" placeholder="Tag"
+                     required autoFocus className="select-tag" placeholder="Tag"
                      onChange={handleControlledInputChange} defaultValue={tag.label} />
              
                 </div>

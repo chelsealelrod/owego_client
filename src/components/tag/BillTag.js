@@ -40,11 +40,11 @@ export const BillTag = ({ bill_tag }) => {
                                         name="tags"
                                         required
                                         autoFocus
-                                        className="form-control"
+                                        className="select_tag"
                                         value={currentBillTag.bill_tagId}
                                         onChange={changeBillTagState}
                                     >
-                                        <option className="select_tag" value="0">Select a tag...</option>
+                                        <option value="0">Select a tag...</option>
                                         {tags.map((t => (
                                             <option key={t.id} value={t.id}>{t.label}</option>
                                         )))}
